@@ -1,0 +1,39 @@
+import java.io.*;
+public class var4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		float w = 0;
+		System.out.print("введите число:");
+		BufferedReader bf1 = new BufferedReader(new InputStreamReader(System.in));
+		String str1 = bf1.readLine();
+	    int d = Integer.parseInt(str1);
+	    System.out.print("введите месяц:");
+		BufferedReader bf2 = new BufferedReader(new InputStreamReader(System.in));
+		String str2 = bf2.readLine();
+	    int m = Integer.parseInt(str2);
+	    System.out.print("введите год:");
+		BufferedReader bf3 = new BufferedReader(new InputStreamReader(System.in));
+		String str3 = bf3.readLine();
+	    int y = Integer.parseInt(str3);
+	    if (d<2) {
+	    	y = y - 1; 
+	    	d = d + 3;
+	    	w = (1 + (d + y + y/4 - y/100 + y/400 + (31*m + 10)/12)) % 7;
+	    } else {
+	    	w = (1 + (d + y + y/4 - y/100 + y/400 + (31*m+10)/12)) % 7;
+	    }
+	    if (w==1) System.out.println(+d+".0"+m+"."+y+" - понедельник");
+	    if (w==2) System.out.println(+d+".0"+m+"."+y+" - вторник");
+	    if (w==3) System.out.println(+d+".0"+m+"."+y+" - среда");
+	    if (w==4) System.out.println(+d+".0"+m+"."+y+" - четверг");
+	    if (w==5) System.out.println(+d+".0"+m+"."+y+" - пятница");
+	    if (w==6) System.out.println(+d+".0"+m+"."+y+" - суббота");
+	    if (w==7) System.out.println(+d+".0"+m+"."+y+" - воскресенье");
+	    		
+	}
+
+}
