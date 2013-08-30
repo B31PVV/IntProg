@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.Random;
+public class var3 {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		int i = 0, k = 0;
+		while (i==0) {
+			i=i+1;
+			System.out.print("для начала игры нажмите 1, для выхода нажмите 2, для просмотра таблицы результатов нажмите 0:");
+			BufferedReader bf1 = new BufferedReader(new InputStreamReader(System.in));
+			String str1 = bf1.readLine();
+			int m = Integer.parseInt(str1);
+			if (m==1) {
+				System.out.println("компьютер загадывает число!");
+				Random rand = new Random();
+				int r = rand.nextInt(10);
+				System.out.print("испытайте судьбу, введите свое число:");
+				BufferedReader bf2 = new BufferedReader(new InputStreamReader(System.in));
+				String str2 = bf2.readLine();
+				int user_number = Integer.parseInt(str2);
+				if (r==user_number) {
+					k++;
+					System.out.println("вы угадали! невероятно!");					
+				}
+					else {
+						System.out.println("к сожалению, вы не угадали, компьютер загадал "+r);						
+					}
+				i=i-1;
+			}
+			if (m==0) {
+				System.out.println("количество правильных ответов - "+k);
+				i=i-1;
+			}
+			if (m==2) {
+				System.out.println("всего доброго! до новых встреч!");
+			}
+		}
